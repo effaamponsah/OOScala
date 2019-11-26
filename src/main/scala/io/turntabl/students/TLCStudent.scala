@@ -6,7 +6,7 @@ import io.turntabl.grades.Grades
     val desc: String ="";
     override def toString = s"New student $fName $secondName added in $entranceYr"
 
-    override def GetWorkload: String = "Works super hard"
+    override val GetWorkload: String = "Works super hard"
 
     def sameYear(s: TLCStudent) = entranceYr ==  s.entranceYr
 

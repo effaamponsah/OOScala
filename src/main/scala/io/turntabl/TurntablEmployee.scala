@@ -1,5 +1,7 @@
 package io.turntabl
 
 class TurntablEmployee {
-  def GetWorkload:String=""
+  val GetWorkload:String=""
+
+
 }

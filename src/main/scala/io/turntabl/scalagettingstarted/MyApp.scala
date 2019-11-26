@@ -9,6 +9,8 @@ object MyApp extends App {
 
     val student2 = new TLCStudent("Christy", "Asare", 2018)
 
+    val manager = new TurntablManager
+
     student.TopGrade("Intro to Data Science", "F")
     student2.TopGrade("Scala", "A")
     println(student.TOS)
@@ -17,6 +19,7 @@ object MyApp extends App {
     def printLoad(turntablEmployee: TurntablEmployee) = print(turntablEmployee.GetWorkload)
 
     printLoad(student)
+    printLoad(manager)
 
 
 }
