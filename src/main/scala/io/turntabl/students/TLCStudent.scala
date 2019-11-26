@@ -10,8 +10,8 @@ import io.turntabl.grades.Grades
 
     def sameYear(s: TLCStudent) = entranceYr ==  s.entranceYr
 
-    def TOS()=if (entranceYr < 2019)2019 - entranceYr else "Cant compute"
-
+    //    def TOS()=if (entranceYr < 2019)2019 - entranceYr else "Cant compute"
+    override def TOS(entranceYr: Int): Any = super.TOS(entranceYr)
     def TopGrade(subject:String, grade:String) = Grades(subject, grade)
 
     }
