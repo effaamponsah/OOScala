@@ -1,8 +1,5 @@
 package io.turntabl.scalagettingstarted
 
-import io.turntabl.manager.TurntablManager
-import io.turntabl.TurntablEmployee
-import io.turntabl.students.TLCStudent
 
 object MyApp extends App {
     val returnLength=(word:String) => word.length
@@ -13,7 +10,7 @@ object MyApp extends App {
 
     println(ApplyToString("Dennis",returnLength))
 
-    println(ApplyToString(" Dennis Effa Amponsah ", returnSpaces))
+    println(ApplyToString(" Dennis Effa Amponsah", returnSpaces))
 
 
     val calculate=(operation:String) => ((param1:Int, param2:Int) => operation match {
