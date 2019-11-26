@@ -1,9 +1,12 @@
 package io.turntabl.students
+import io.turntabl.TurntablEmployee
 import io.turntabl.grades.Grades
-  class TLCStudent(val fName:String,val secondName: String, val entranceYr: Int, github:String="github.com/turntabl"){
+  class TLCStudent(val fName:String,val secondName: String, val entranceYr: Int, github:String="github.com/turntabl") extends TurntablEmployee{
     val  ID:String="";
     val desc: String ="";
     override def toString = s"New student $fName $secondName added in $entranceYr"
+
+    override def GetWorkload: String = "Works super hard"
 
     def sameYear(s: TLCStudent) = entranceYr ==  s.entranceYr
 
