@@ -13,7 +13,7 @@ object MyApp extends App {
 
     student.TopGrade("Intro to Data Science", "F")
     student2.TopGrade("Scala", "A")
-    println(student.TOS)
+//    println(student.TOS)
     println(student sameYear student2)
 
     def printLoad(turntablEmployee: TurntablEmployee) = print(turntablEmployee.GetWorkload)
