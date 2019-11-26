@@ -2,31 +2,27 @@ package io.turntabl.scalagettingstarted
 
 
 object MyApp extends App {
-    val returnLength=(word:String) => word.length
-
-    val returnSpaces = (sentence:String) => sentence.split(" ").length - 1
-
-    val  ApplyToString=(word: String, func:(String =>Int)) => func(word)
-
-    println(ApplyToString("Dennis",returnLength))
-
-    println(ApplyToString(" Dennis Effa Amponsah", returnSpaces))
+    val myself = ("Dennis", "python")
+    val name, favLang = myself
 
 
-    val calculate=(operation:String) => ((param1:Int, param2:Int) => operation match {
-        case "add" => param1 + param2
-        case "subtract" => param1 - param2
-        case "mult" => param1 * param2
-        case _=> "Operation not found"
-    })
+    val countries = Map("Britian" -> "London",
+        "Ghana" -> "Accra",
+        "Togo" -> "Lome") + ("Ethiopia"->"Addis Ababa", "Egypt"->"Cairo")
 
-    val addTwoInts = calculate("add")
-    println(addTwoInts(1,5))
+    print(countries)
+    countries.getOrElse("Norway", "unknown")
 
-    val subTwoInts = calculate("subtract")
-    println(subTwoInts(5,3))
+    val friends = Set("James", "John", "Hannah")+("Samuel","Samuel")
 
-    val invalidOp=calculate("testing")
-    println(invalidOp(9,4))
+    println(friends.count(_ == "Samuel"))
+
+    val names =List("Christiana","Francis","Bill")
+    names foreach(print)
+
+    names filter(name => name.length > 6) foreach(print)
+
+    print(names count(_.length > 6))
+
 
 }
