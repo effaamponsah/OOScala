@@ -5,21 +5,31 @@ import io.turntabl.TurntablEmployee
 import io.turntabl.students.TLCStudent
 
 object MyApp extends App {
-    val student = new TLCStudent("Dennis", "Effa",2018)
+    val returnLength=(word:String) => word.length
 
-    val student2 = new TLCStudent("Christy", "Asare", 2018)
+    val returnSpaces = (sentence:String) => sentence.split(" ").length - 1
 
-    val manager = new TurntablManager
+    val  ApplyToString=(word: String, func:(String =>Int)) => func(word)
 
-    student.TopGrade("Intro to Data Science", "F")
-    student2.TopGrade("Scala", "A")
-    println(student.TOS)
-    println(student sameYear student2)
+    println(ApplyToString("Dennis",returnLength))
 
-    def printLoad(turntablEmployee: TurntablEmployee) = print(turntablEmployee.GetWorkload)
+    println(ApplyToString(" Dennis Effa Amponsah ", returnSpaces))
 
-    printLoad(student)
-    printLoad(manager)
 
+    val calculate=(operation:String) => ((param1:Int, param2:Int) => operation match {
+        case "add" => param1 + param2
+        case "subtract" => param1 - param2
+        case "mult" => param1 * param2
+        case _=> "Operation not found"
+    })
+
+    val addTwoInts = calculate("add")
+    println(addTwoInts(1,5))
+
+    val subTwoInts = calculate("subtract")
+    println(subTwoInts(5,3))
+
+    val invalidOp=calculate("testing")
+    println(invalidOp(9,4))
 
 }
