@@ -1,5 +1,8 @@
 package io.turntabl.scalagettingstarted
 import io.turntabl.Book
+import io.turntabl.manager.TurntablManager
+import io.turntabl.students.TLCStudent
+import io.turntabl.TurntablEmployee
 
 object MyApp extends App {
 
@@ -18,9 +21,27 @@ object MyApp extends App {
         Book("Andrew","Decoding Bill Gates",1998,"Comedy")
     )
 
-    val authorsWithMatch=(bookList: List[Book],category:String)=>  category match {
-        case "History" => bookList filter(book => book.category == "History") map(book => book.authorSurnamme) foreach(print)
-    }
+//    val authorsWithMatch=(bookList: List[Book],category:String)=>  category match {
+//        case "History" => bookList filter(book => book.category == "History") map(book => book.authorSurnamme) foreach(print)
+//    }
+//    authorsWithMatch(books, "History")
 
-   authorsWithMatch(books, "History")
+//    val authorsWithMatch=(bookList:List[Book])=> bookList match
+
+
+    val employees = List(
+         TurntablManager("Sam"),
+        new TLCStudent("Patricia", "Koko",2017),
+        new TLCStudent("Bernice", "Effa",2016),
+        new TLCStudent("Dennis", "Effa",2019),
+        new TurntablManager("James"),
+        new TLCStudent("Francis", "Jojo",2017),
+        new TLCStudent("Yaa", "Kusi",2017),
+        new TurntablManager("Ibrahim")
+    )
+//    employees match {
+//        case TurntablManager(name) =>  println(name)
+//        case TLCStudent(fName, secondName,yr) => print(fName+" "+secondName)
+//    }
+
 }
