@@ -29,8 +29,8 @@ object MyApp extends App {
 //    val authorsWithMatch=(bookList:List[Book])=> bookList match
 
 
-    val employees = List(
-         TurntablManager("Sam"),
+    val employees :List[TurntablEmployee]= List(
+        new TurntablManager("Sam"),
         new TLCStudent("Patricia", "Koko",2017),
         new TLCStudent("Bernice", "Effa",2016),
         new TLCStudent("Dennis", "Effa",2019),
@@ -39,9 +39,10 @@ object MyApp extends App {
         new TLCStudent("Yaa", "Kusi",2017),
         new TurntablManager("Ibrahim")
     )
-//    employees match {
-//        case TurntablManager(name) =>  println(name)
-//        case TLCStudent(fName, secondName,yr) => print(fName+" "+secondName)
-//    }
+
+    def booksByTile(bookList: List[Book]):Map[String, Book] = bookList map(book => book.title -> book) toMap
+    val map = booksByTile(books)
+    print(map)
+
 
 }
